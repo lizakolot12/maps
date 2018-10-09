@@ -1,0 +1,93 @@
+{
+   "html_attributions" : [],
+   "results" : [
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 48.4578467,
+               "lng" : 35.0597139
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 48.4591064302915,
+                  "lng" : 35.0609613802915
+               },
+               "southwest" : {
+                  "lat" : 48.45640846970851,
+                  "lng" : 35.0582634197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+         "id" : "0adb07df4a3e8638d69a8b4125afdaf770090ee6",
+         "name" : "Atrium",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 4000,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111235969193465509349/photos\"\u003eSuper Mural\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRaAAAApzz-Bfuns-B44VuT1HWPQCcWIDfMGceiM1s1eEpIC3O9Xysmuwsn8T1K7TsSIos7lZ1ov_uad7KioAOoPjTYNBij4GUXXoHCQ6WBzEOQPpavzSoB9gHUHRyjB6FbDIvWEhDpQVsnReaNC1x0zANztHTtGhQZGcAmAvyP7jY11EDaOEuRUBzXZg",
+               "width" : 3000
+            }
+         ],
+         "place_id" : "ChIJV4grLsrj20ARChZlKtCn2-c",
+         "plus_code" : {
+            "compound_code" : "F355+4V Dnipro, Dnipropetrovsk Oblast, Ukraine",
+            "global_code" : "8GWQF355+4V"
+         },
+         "rating" : 5,
+         "reference" : "ChIJV4grLsrj20ARChZlKtCn2-c",
+         "scope" : "GOOGLE",
+         "types" : [ "shopping_mall", "point_of_interest", "establishment" ],
+         "vicinity" : "Dmytra Yavornytskoho Avenue, 22-26, Dnipro"
+      },
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : 48.456384,
+               "lng" : 35.0608399
+            },
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 48.4577176802915,
+                  "lng" : 35.0621713802915
+               },
+               "southwest" : {
+                  "lat" : 48.4550197197085,
+                  "lng" : 35.0594734197085
+               }
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/shopping-71.png",
+         "id" : "c18ce618f290ddbfea64753f19e37acb87330aa7",
+         "name" : "Kasta Fashion",
+         "opening_hours" : {
+            "open_now" : true
+         },
+         "photos" : [
+            {
+               "height" : 2048,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/102490306457675409868/photos\"\u003eArtem Sin\u003c/a\u003e"
+               ],
+               "photo_reference" : "CmRZAAAAHUYghqQUdfmVW55H7NkyUNpu05PDTtWLRQGrVkTtr2qsIOB_EILcx_FMGh8X4GJn-5FDZzUhL8-dByIwAq7TjLErKhIftlJrgIkjzTyMPTbT3A9_pOgbhzIFZpFYVDYKEhAio1oZgDlvMUZXLKUCG5CjGhRZBJy1h99KkxR7OuN6gmFWPAGbDg",
+               "width" : 1536
+            }
+         ],
+         "place_id" : "ChIJs3lf1dDi20ARsZHN0wTmfHk",
+         "plus_code" : {
+            "compound_code" : "F346+H8 Dnipro, Dnipropetrovsk Oblast, Ukraine",
+            "global_code" : "8GWQF346+H8"
+         },
+         "reference" : "ChIJs3lf1dDi20ARsZHN0wTmfHk",
+         "scope" : "GOOGLE",
+         "types" : [ "shopping_mall", "point_of_interest", "establishment" ],
+         "vicinity" : "Dmytra Yavornytskoho Avenue, 22, Dnipro"
+      }
+   ],
+   "status" : "OK"
+}
