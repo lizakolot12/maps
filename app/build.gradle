@@ -25,12 +25,12 @@ android {
     }
 }
 
-//detekt {
-//    toolVersion = "1.0.0.RC9.2"
-//    input = files("/src/main/java")
-//    filters = ".*/resources/.*,.*/build/.*"
-//    config = files("../config.yml")
-//}
+detekt {
+    toolVersion = "1.0.0.RC9.2"
+    input = files("$project.projectDir.absolutePath")
+    filters = ".*/resources/.*,.*/build/.*"
+    config = files("detekt_config.yml")
+}
 
 
 dependencies {

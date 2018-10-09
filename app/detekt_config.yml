@@ -1,0 +1,52 @@
+autoCorrect: true
+failFast: true
+
+test-pattern: # Configure exclusions for test sources
+  active: true
+  patterns: # Test file regexes
+    - '.*.kt'
+  exclude-rule-sets:
+    - 'comments'
+  exclude-rules:
+   # - 'NamingRules'
+#    - 'WildcardImport'
+#    - 'MagicNumber'
+#    - 'MaxLineLength'
+#    - 'LateinitUsage'
+#    - 'StringLiteralDuplication'
+#    - 'SpreadOperator'
+#    - 'TooManyFunctions'
+#    - 'ForEachOnRange'
+
+build:
+  maxIssues: 9
+  weights:
+    # complexity: 2
+    # LongParameterList: 1
+    # style: 1
+    # comments: 1
+
+processors:
+  active: true
+  exclude:
+  # - 'FunctionCountProcessor'
+  # - 'PropertyCountProcessor'
+  # - 'ClassCountProcessor'
+  # - 'PackageCountProcessor'
+  # - 'KtFileCountProcessor'
+
+console-reports:
+  active: true
+  exclude:
+  #  - 'ProjectStatisticsReport'
+  #  - 'ComplexityReport'
+  #  - 'NotificationReport'
+  #  - 'FindingsReport'
+  #  - 'BuildFailureReport'
+
+output-reports:
+  active: true
+  exclude:
+  #  - 'HtmlOutputReport'
+  #  - 'TxtOutputReport'
+  #  - 'XmlOutputReport'
