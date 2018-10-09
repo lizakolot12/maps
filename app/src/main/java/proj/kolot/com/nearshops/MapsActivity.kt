@@ -25,7 +25,6 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
         GoogleMap.OnMarkerClickListener {
 
@@ -132,7 +131,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
         })
     }
 
-    private fun getLatLong(): String? {
+    private fun getLatLong(): String {
         return lastLocation.latitude.toString() + "," + lastLocation.longitude
     }
 
@@ -140,7 +139,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
     private fun showNearbyPlaces(nearbyFoundedPlaceList: List<FoundedPlace>) {
         nearbyFoundedPlaceList.forEach {
             var title = it.name + " : " + it.vicinity;
-            var latLng = LatLng(it.geometry.location.lat, it.geometry.location.lng)
+            var latLng = LatLng(it.geometry?.location?.lat?:0.0, it?.geometry?.location?.lng?:0.0)
             showPoint(title, latLng)
 
 
