@@ -19,7 +19,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         Fabric.with(this, new Crashlytics());
-        Fabric.with(this, new Answers());
+        Fabric.with(this, new Answers(), new Crashlytics());
         instance = this;
         nearbyApi = RetrofitClientInstance.getRetrofitInstance().create(NearbyApi.class);
 
