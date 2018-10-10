@@ -53,7 +53,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         showContent()
         //for test Crashlytics
-       //throw RuntimeException("This is a crash")
+        //throw RuntimeException("This is a crash")
     }
 
 
@@ -78,7 +78,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         when (requestCode) {
             LOCATION_PERMISSION_REQUEST_CODE -> {
-                if (grantResults.size > 0
+                if (grantResults.isNotEmpty()
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     showContent()
                 }
@@ -139,19 +139,18 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
 
     //for test Answers
     private fun sendMetrics() {
-            Answers.getInstance().logCustom(CustomEvent("Find Shop"))
+        Answers.getInstance().logCustom(CustomEvent("Find Shop"))
 
     }
 
-    private fun getLatLong(): String {
-        return lastLocation.latitude.toString() + "," + lastLocation.longitude
-    }
+    private fun getLatLong() = lastLocation.latitude.toString() + "," + lastLocation.longitude
 
 
     private fun showNearbyPlaces(nearbyFoundedPlaceList: List<FoundedPlace>) {
         nearbyFoundedPlaceList.forEach {
             val title = it.name + " : " + it.vicinity;
-            val latLng = LatLng(it.geometry?.location?.lat?:0.0, it.geometry?.location?.lng?:0.0)
+            val latLng = LatLng(it.geometry?.location?.lat ?: 0.0, it.geometry?.location?.lng
+                    ?: 0.0)
             showPoint(title, latLng)
 
 
@@ -159,7 +158,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
     }
 
     private fun showPoint(name: String, position: LatLng) {
-        var markerOptions = MarkerOptions()
+        val markerOptions = MarkerOptions()
         markerOptions.position(position)
         markerOptions.title(name)
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))

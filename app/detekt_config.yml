@@ -19,7 +19,7 @@ test-pattern: # Configure exclusions for test sources
 #    - 'ForEachOnRange'
 
 build:
-  maxIssues: 7
+  maxIssues: 4
   weights:
     # complexity: 2
     # LongParameterList: 1
@@ -50,3 +50,8 @@ output-reports:
   #  - 'HtmlOutputReport'
   #  - 'TxtOutputReport'
   #  - 'XmlOutputReport'
+
+style:
+  ReturnCount:
+      active: true
+      max: 3
