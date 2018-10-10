@@ -9,6 +9,8 @@ import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import com.crashlytics.android.answers.Answers
+import com.crashlytics.android.answers.CustomEvent
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -51,7 +53,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         showContent()
         //for test Crashlytics
-       // throw RuntimeException("This is a crash")
+       //throw RuntimeException("This is a crash")
     }
 
 
@@ -113,7 +115,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
                 }
 
             }
-        } catch (e: SecurityException) {
+        } catch (e: Exception) {
             Log.e(TAG, e.message)
         }
 
@@ -122,6 +124,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
     override fun onMarkerClick(p0: Marker?) = false
 
     private fun findShops() {
+        sendMetrics()
         App.getInstance().nearbyApi.getNearByPlaces(getLatLong(), PROXIMITY_RADIUS, TYPE_OBJECT, getString(R.string.google_maps_key)).enqueue(object : Callback<GeneralResponse> {
             override fun onResponse(call: Call<GeneralResponse>?, response: Response<GeneralResponse>?) {
                 showNearbyPlaces(response?.body()?.foundedPlaces?.toList() ?: emptyList())
@@ -132,6 +135,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
             }
 
         })
+    }
+
+    //for test Answers
+    private fun sendMetrics() {
+            Answers.getInstance().logCustom(CustomEvent("Find Shop"))
+
     }
 
     private fun getLatLong(): String {
