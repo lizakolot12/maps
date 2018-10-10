@@ -44,11 +44,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
+
         val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         showContent()
+        //for test Crashlytics
+       // throw RuntimeException("This is a crash")
     }
 
 
@@ -138,8 +141,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback,
 
     private fun showNearbyPlaces(nearbyFoundedPlaceList: List<FoundedPlace>) {
         nearbyFoundedPlaceList.forEach {
-            var title = it.name + " : " + it.vicinity;
-            var latLng = LatLng(it.geometry?.location?.lat?:0.0, it?.geometry?.location?.lng?:0.0)
+            val title = it.name + " : " + it.vicinity;
+            val latLng = LatLng(it.geometry?.location?.lat?:0.0, it.geometry?.location?.lng?:0.0)
             showPoint(title, latLng)
 
 
