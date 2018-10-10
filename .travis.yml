@@ -24,7 +24,7 @@ branches:
 install:
   - chmod +x ./gradlew
 
-script: ./gradlew clean assemble crashlyticsUploadDistributionRelease
+script: ./gradlew clean assembleRelease crashlyticsUploadDistributionRelease
 
 notifications:
   email:
